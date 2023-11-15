@@ -1,0 +1,11 @@
+suricata install:
+
+docker run -d --net=host \
+    --cap-add=net_admin --cap-add=net_raw --cap-add=sys_nice \
+    -v $(pwd)/logs:/var/log/suricata \
+	jasonish/suricata:latest -i eth0
+--
+  <localfile>
+    <log_format>syslog</log_format>
+    <location>/home/suroot/suricata/logs/*.log</location>
+  </localfile>
