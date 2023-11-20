@@ -1,9 +1,9 @@
 suricata install:
 
-docker run -d --net=host --restart always \
-    --cap-add=net_admin --cap-add=net_raw --cap-add=sys_nice \
-    -v $(pwd)/logs:/var/log/suricata \
-	jasonish/suricata:latest -i eth0
+sudo docker run -d --net=host --restart always  --cap-add=net_admin --cap-add=net_raw --cap-add=sys_nice -v $(pwd)/logs:/var/log/suricata jasonish/suricata:latest -i eth0
+    
+  
+	
 --
   <localfile>
     <log_format>syslog</log_format>
